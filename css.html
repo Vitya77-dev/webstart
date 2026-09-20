@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Короткие уроки по HTML, CSS и JavaScript с примерами, заданиями и подсказками для начинающих.">
+  <title>CSS — Оформление и сетка — ВебСтарт</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232645d9'/%3E%3Cpath d='M12 9L5 16l7 7m8-14l7 7-7 7' stroke='white' stroke-width='3' fill='none'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/script.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">К содержанию</a>
+  <header class="header"><div class="container header-inner"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>ВебСтарт</a><nav aria-label="Главная навигация"><a href="index.html">Главная</a><a href="lessons.html" aria-current="page">Уроки</a><a href="practice.html">Практика</a><a href="help.html">Справка</a></nav></div></header>
+  <main id="main" class="container"><div class="breadcrumb"><a href="lessons.html">Все уроки</a><span aria-hidden="true"> / </span>CSS</div><div class="lesson-layout"><article><p class="eyebrow">УРОК 02 ИЗ 03 · CSS</p><h1>Оформление и сетка</h1><p class="lead">Цвета, отступы, Flexbox, Grid и узкие экраны.</p><section id="theory"><h2>Стили превращают разметку в интерфейс</h2><p>CSS задаёт внешний вид HTML-элементов. Селектор выбирает элементы, а свойства определяют цвет, размеры и расположение. Подключи отдельный файл через &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt; в head.</p><dl><dt>Селектор</dt><dd>Указывает, к каким элементам применяется правило.</dd><dt>margin и padding</dt><dd>Внешний и внутренний отступы.</dd><dt>Flexbox</dt><dd>Удобен для строки навигации и выравнивания.</dd><dt>Grid</dt><dd>Удобен для сетки карточек.</dd><dt>Медиазапрос</dt><dd>Меняет оформление при заданном условии, например ширине экрана.</dd></dl></section><section id="example"><h2>Пример кода</h2><pre><code>/* Правило для всех элементов, включая рамки и отступы. */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; }
+main { max-width: 960px; margin: auto; padding: 24px; }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+img { max-width: 100%; height: auto; }
+@media (max-width: 700px) {
+  .cards { grid-template-columns: 1fr; }
+}</code></pre><p>Класс cards назначается контейнеру с тремя дочерними блоками. На широком экране они стоят в ряд, а на узком — друг под другом.</p></section><section id="task" class="task-box"><p class="eyebrow">ПРАКТИКА ПО ТЕМЕ</p><h2>Оформи три карточки</h2><p>Создай три блока в контейнере с классом cards. Добавь им padding, фон и рамку. Проверь страницу при ширине 375 и 1280 пикселей.</p><details><summary>Показать подсказку</summary><p>Для класса используется точка: .cards. Чтобы отступы не расширяли заданную ширину, пригодится box-sizing: border-box.</p></details><h3>Критерии самопроверки</h3><ul class="criteria"><li>CSS подключён отдельным файлом.</li><li>На широком экране видны три колонки.</li><li>На узком экране карточки стоят в одну колонку.</li><li>Основной текст не требует горизонтальной прокрутки.</li></ul><p class="small">Проверяй результат в своём браузере. Сайт не оценивает твой код автоматически.</p></section><div class="lesson-bottom"><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout">Подробнее в MDN ↗</a><a class="button" href="javascript.html">Далее: JavaScript →</a></div></article><aside class="lesson-nav"><p class="eyebrow">В ЭТОМ УРОКЕ</p><a href="#theory">Теория</a><a href="#example">Пример кода</a><a href="#task">Задание и подсказка</a><hr><p>Перед началом</p><p class="small">Пройди предыдущий урок или повтори его основные понятия.</p><a href="html.html">Повторить HTML</a></aside></div></main>
+  <footer class="footer"><div class="container footer-inner"><span>ВебСтарт · Учимся создавать страницы</span><a href="help.html#about">О проекте и источники</a></div></footer>
+</body>
+</html>

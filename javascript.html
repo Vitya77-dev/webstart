@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Короткие уроки по HTML, CSS и JavaScript с примерами, заданиями и подсказками для начинающих.">
+  <title>JavaScript — Первое действие — ВебСтарт</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232645d9'/%3E%3Cpath d='M12 9L5 16l7 7m8-14l7 7-7 7' stroke='white' stroke-width='3' fill='none'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/script.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">К содержанию</a>
+  <header class="header"><div class="container header-inner"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>ВебСтарт</a><nav aria-label="Главная навигация"><a href="index.html">Главная</a><a href="lessons.html" aria-current="page">Уроки</a><a href="practice.html">Практика</a><a href="help.html">Справка</a></nav></div></header>
+  <main id="main" class="container"><div class="breadcrumb"><a href="lessons.html">Все уроки</a><span aria-hidden="true"> / </span>JavaScript</div><div class="lesson-layout"><article><p class="eyebrow">УРОК 03 ИЗ 03 · JavaScript</p><h1>Первое действие</h1><p class="lead">Находим элемент и реагируем на нажатие кнопки.</p><section id="theory"><h2>Событие запускает действие</h2><p>JavaScript может изменять содержание страницы в ответ на действие пользователя. Найдём кнопку через querySelector и добавим обработчик события click. Для обычной кнопки click работает также при активации с клавиатуры.</p><dl><dt>const</dt><dd>Объявляет переменную, которой нельзя присвоить другое значение.</dd><dt>querySelector</dt><dd>Находит первый элемент по CSS-селектору.</dd><dt>addEventListener</dt><dd>Подключает обработчик события.</dd><dt>textContent</dt><dd>Читает или заменяет текст элемента.</dd></dl></section><section id="example"><h2>Пример кода</h2><pre><code>&lt;!-- Добавь эти элементы в body. --&gt;
+&lt;button id=&quot;hello-button&quot; type=&quot;button&quot;&gt;Поздороваться&lt;/button&gt;
+&lt;p id=&quot;hello-text&quot; aria-live=&quot;polite&quot;&gt;Нажми кнопку.&lt;/p&gt;
+&lt;script&gt;
+  const button = document.querySelector(&#x27;#hello-button&#x27;);
+  const text = document.querySelector(&#x27;#hello-text&#x27;);
+  button.addEventListener(&#x27;click&#x27;, function () {
+    text.textContent = &#x27;Привет! JavaScript работает.&#x27;;
+  });
+&lt;/script&gt;</code></pre><p>В примере script находится после элементов. Для отдельного файла в head используй defer, чтобы разметка была разобрана перед выполнением кода.</p><div class="demo"><p class="eyebrow">ПОПРОБУЙ ЗДЕСЬ</p><button id="hello-button" class="button" type="button">Поздороваться</button><p id="hello-text" aria-live="polite">Нажми кнопку.</p></div></section><section id="task" class="task-box"><p class="eyebrow">ПРАКТИКА ПО ТЕМЕ</p><h2>Кнопка приветствия</h2><p>Добавь кнопку и абзац. При нажатии меняй текст абзаца. Проверь действие мышью и клавиатурой.</p><details><summary>Показать подсказку</summary><p>Если кнопка не работает, проверь совпадение id в HTML и селектора в JavaScript. Открой консоль браузера и прочитай сообщение об ошибке.</p></details><h3>Критерии самопроверки</h3><ul class="criteria"><li>Кнопка имеет понятную подпись.</li><li>Нажатие меняет текст без перезагрузки.</li><li>Кнопка доступна через Tab и срабатывает через Enter.</li><li>В консоли нет ошибок, связанных с этим кодом.</li></ul><p class="small">Проверяй результат в своём браузере. Сайт не оценивает твой код автоматически.</p></section><div class="lesson-bottom"><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Events">Подробнее в MDN ↗</a><a class="button" href="practice.html#project">К итоговому проекту →</a></div></article><aside class="lesson-nav"><p class="eyebrow">В ЭТОМ УРОКЕ</p><a href="#theory">Теория</a><a href="#example">Пример кода</a><a href="#task">Задание и подсказка</a><hr><p>Перед началом</p><p class="small">Пройди предыдущий урок или повтори его основные понятия.</p><a href="css.html">Повторить CSS</a></aside></div></main>
+  <footer class="footer"><div class="container footer-inner"><span>ВебСтарт · Учимся создавать страницы</span><a href="help.html#about">О проекте и источники</a></div></footer>
+</body>
+</html>
